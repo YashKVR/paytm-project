@@ -5,9 +5,9 @@ import bcrypt from "bcrypt";
 export const authOptions = {
     providers: [
       CredentialsProvider({
-          name: 'Credentials',
+          name: 'Phone Number',
           credentials: {
-            phone: { label: "Phone number", type: "text", placeholder: "1231231231", required: true },
+            phone: { label: "Phone number", type: "text", placeholder: "9124785236", required: true },
             password: { label: "Password", type: "password", required: true }
           },
           // TODO: User credentials type from next-aut
@@ -39,7 +39,8 @@ export const authOptions = {
                         password: hashedPassword
                     }
                 });
-            
+                
+                // Ideally you should do OTP validation
                 return {
                     id: user.id.toString(),
                     name: user.name,
